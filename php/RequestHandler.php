@@ -17,6 +17,9 @@
                     case 'testi':
                         $this->handleTesti($content);
                         break;
+                    case 'getMessages':
+                        $this->handleGetMessages();
+                        break;
                     default:
                         break;
                 }
