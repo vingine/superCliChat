@@ -1,0 +1,27 @@
+///////////////////////////////////////////////////////////////////////////////
+// Authorization / login:
+///////////////////////////////////////////////////////////////////////////////
+generateClientId()
+generatePublicClientKey()
+packageJarFile(clientId, privateClientKey)
+verifyClient(clientId, privateClientKey)
+checkServerKeys(publicServerKey)
+verifyData(clientData, serverData)
+    clientDataVerify(clientData, privateClientKey)
+    clientDataVerify(serverData, privateClientKey)
+verifyAesKey(aesData, privateClientKey)
+checkClientPublicKeySign(data)
+->decryptClientPublicKey(data)
+
+///////////////////////////////////////////////////////////////////////////////
+// DB:
+///////////////////////////////////////////////////////////////////////////////
+getClient(clientId)
+saveClient(clientData)
+
+getServer(serverKey)
+saveServer(serverData)
+
+getConnection(clientId)
+saveConnection(connectionData)
+
