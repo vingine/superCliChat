@@ -4,9 +4,9 @@
 
 class myDbConnection{
 	private $servername = "mydb.tamk.fi";
-	private $username = "e4truusk";
-	private $password = "q0RewxLG";
-	private $dbname = "dbe4truusk1";
+	private $username = "c4tpelto";
+	private $password = "3rtR5RcD";
+	private $dbname = "dbc4tpelto";
 	
 	private $connection;
 	
@@ -79,18 +79,18 @@ function getMessages() {
 	}
 	
 	try {
-		$statement = $connection->getConnection()->prepare("SELECT message_id FROM Message");
+		$statement = $connection->getConnection()->prepare("SELECT message_id,  FROM Message");
 		$statement->execute();
 		$id = $statement->fetch(PDO::FETCH_ASSOC);
-		/*$username = $connection->getConnection()->prepare("SELECT username FROM Message;");
-		$messagecontent = $connection->getConnection()->prepare("SELECT content FROM MessageBody;");*/
-		echo $id;
+		$username = $connection->getConnection()->prepare("SELECT username FROM Message");
+		$messagecontent = $connection->getConnection()->prepare("SELECT content FROM MessageBody");*/
+		echo $id + " " + $username + $messagecontent;
 	} catch (PDOException $e) {
 		return false;
 	}
 }
 
-getMessages();
+
 
 /*function createAccount($account,$password){
 	// these things will execute
