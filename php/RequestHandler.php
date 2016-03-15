@@ -1,13 +1,15 @@
 <?php
-    class RequestHandler {
+    require_once './functions/ServerFunctions.php';
 
+    class RequestHandler
+    {
         private function handleTesti($content) {
-            echo $content;
+            echo '<p>' . $content . '</p>';
         }
 
         public function handle($header, $content) {
         
-            if (!is_string($header) || !is_string($content)) {
+            if (!is_string($header)) {
 
                 echo "Input value is not correct!";
             } else {
@@ -17,9 +19,13 @@
                     case 'testi':
                         $this->handleTesti($content);
                         break;
-                    case 'getMessages':
-                        $this->handleGetMessages();
+                    case 'arrayTest':
+                        $dump1 = $_POST['content1'];
+                        $dump2 = $_POST['content2'];
+                        echo "<p>" . $dump1 . " " . $dump2 . "</p>";
                         break;
+                    case 'getMessages':
+                        // databasesta viestit
                     default:
                         break;
                 }
